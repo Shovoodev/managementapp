@@ -8,3 +8,48 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+.task {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 7px 0;
+    animation: slide-in ease 0.5s;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateX(40px);
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .task::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--color-danger);
+  }
+  
+  .completed {
+    position: relative;
+  }
+  
+  .completed::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+  }

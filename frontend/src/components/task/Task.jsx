@@ -1,22 +1,40 @@
-import { FaEdit ,FaCheckDouble , FaRegTrashAlt  } from "react-icons/fa";
+/* eslint-disable react/prop-types */
+import { FaEdit, FaCheckDouble, FaRegTrashAlt } from "react-icons/fa";
 
-const Task = () => {
+const Task = ({ task, index, deleteTask, getSingleTask, getCompletedTask }) => {
   return (
     <>
-    <div className=" relative flex justify-between items-center w-full bg-[#eee] p-3 mt-2">
+      <div
+        className={!task.completed? "task completed" : "task"}
+      >
         <p>
-          <b>1. </b>
-          Task 1
+          <b>{index + 1} . </b>
+          {task.name}
         </p>
         <div className=" text-[1rem] flex  gap-2">
-            <FaCheckDouble color="green"/>
-            <FaEdit color="blue"/>
-            <FaRegTrashAlt color="red"/>
+          <FaCheckDouble
+            color="green"
+            onClick={() => {
+              getCompletedTask(task);
+            }}
+          />
+          <FaEdit
+            color="blue"
+            onClick={() => {
+              getSingleTask(task);
+            }}
+          />
+          <FaRegTrashAlt
+            className=" cursor-pointer"
+            color="red"
+            onClick={() => {
+              deleteTask(task._id);
+            }}
+          />
         </div>
-    </div>
-       <div> </div>
-       </>
-  )
-}
+      </div>
+    </>
+  );
+};
 
-export default Task
+export default Task;

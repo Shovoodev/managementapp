@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <div className=""> 
-        <Navbar />
+        <Navbar/>
         <div className=" w-auto min-w-full flex justify-center ">
-          <div className=" w-auto max-w-lg h-auto border border-transparent rounded-lg shadow-slate-900 overflow-hidden mt-24 px-12 py-8">
+          <div className=" w-[700px] max-w-lg h-auto border border-transparent rounded-lg shadow-slate-900 overflow-hidden px-12 py-8">
             <TaskList />
           </div>
           <ToastContainer />
