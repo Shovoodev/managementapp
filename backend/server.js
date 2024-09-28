@@ -3,14 +3,15 @@ const express = require("express");
 const connectDB = require("./config/connectDB");
 const Task = require("./models/taskModel");
 const taskRoutes = require("./routes/taskRoutes");
+const cors = require('cors')
 //nPX7JRDV50VUOaVi
 const app = express();
 
 //middlewear
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors())
 app.use("/api/tasks",taskRoutes);
-
 //routes
 app.get("/", (req, res) => {
   res.send("Home page");
