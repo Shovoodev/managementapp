@@ -11,7 +11,7 @@ function App() {
         <Navbar/>
         <div className=" w-auto min-w-full flex justify-center ">
           <div className=" w-[700px] max-w-lg h-auto border border-transparent rounded-lg shadow-slate-900 overflow-hidden px-12 py-8">
-            <TaskList />
+         <TaskList />
           </div>
           <ToastContainer />
         </div>

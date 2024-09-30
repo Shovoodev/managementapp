@@ -1,5 +1,6 @@
 import { LuAirplay } from "react-icons/lu";
 import Dropdown from "./Dropdown";
+import TaskList from "../task/TaskList";
 
 const Navbar = () => {
   const handleselect = (e) => {
@@ -22,13 +23,9 @@ const Navbar = () => {
                 onSelect={handleselect}
               />
             </li>
-            <li className="flex gap-1">
-              Resources{" "}
-              <Dropdown
-                label="∨"
-                options={["dif", "dif", "dif"]}
-                onSelect={handleselect}
-              />{" "}
+            <li onClick={<TaskList/>} className="flex gap-1 cursor-pointer hover:text-blue-900">
+              Task Manager
+             
             </li>
             <li className="flex gap-1">
               Press Room{" "}
@@ -59,7 +56,6 @@ const Navbar = () => {
         </div>
         <div className="p-3">
           <button className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-lg">
-            {" "}
             REQUEST A DEMO
           </button>
         </div>

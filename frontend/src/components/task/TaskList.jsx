@@ -31,7 +31,6 @@ const TaskList = () => {
     try {
       const { data } = await axios.get(Url, tasks);
       setTasks(data);
-      console.log(data);
       setIsLoading(false);
     } catch (error) {
       toast.error(error.massage);
@@ -42,7 +41,7 @@ const TaskList = () => {
   useEffect(() => {
     getTasks();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [1]);
+  }, []);
   const createTask = async (e) => {
     e.preventDefault();
     if (name === "") {
@@ -54,7 +53,6 @@ const TaskList = () => {
       setFormData({ ...formData, name: "" });
     } catch (error) {
       toast.error(error.massage);
-      console.log(error);
     }
   };
   const deleteTask = async (id) => {
